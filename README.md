@@ -1,2 +1,22 @@
 # shot.ai
 a shot glass holds a lot more than you think.
+
+shot.ai is a mobile-first, AI-curated daily digest of emerging technology,
+developer tools, and AI trends.
+
+Instead of infinite feeds, shot.ai delivers a concise daily “shot” of
+high-signal insights — summarized, categorized, and readable directly
+inside the app.
+
+## Core principles
+- Signal over noise
+- In-app reading, not link dumping
+- AI as an editor, not a hype machine
+- Built for engineers who want to stay sharp
+
+## Tech Stack (initial)
+- Mobile: Flutter
+- Backend: FastAPI (Python)
+- AI: LLM-based summarization & classification
+- Data: PostgreSQL
+
