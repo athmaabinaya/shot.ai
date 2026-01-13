@@ -1,0 +1,11 @@
+name: shot_ai
+description: A mobile-first, AI-curated daily digest of emerging technology, developer tools, and AI trends.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
