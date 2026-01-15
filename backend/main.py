@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import httpx
+from ai import summarize_item
+
 
 app = FastAPI(title="shot.ai API")
 
@@ -32,6 +34,21 @@ async def get_digest():
                     "by": data.get("by"),
                     "score": data.get("score"),
                 })
+            
+            summary = summarize_item(
+                title=data.get("title"),
+                url=data.get("url")
+            ) or "Summary unavailable."
+
+
+            items.append({
+                "id": data["id"],
+                "title": data.get("title"),
+                "url": data.get("url"),
+                "by": data.get("by"),
+                "score": data.get("score"),
+                "summary": summary
+            })
 
         return {
             "date": "today",
