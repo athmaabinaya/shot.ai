@@ -19,7 +19,7 @@ async def get_digest():
     async with httpx.AsyncClient() as client:
         # get top story IDs
         ids_response = await client.get(HN_TOP_STORIES)
-        ids = ids_response.json()[:10]  # top 10 for now
+        ids = ids_response.json()[:5]  # top 10 for now
 
         items = []
         for story_id in ids:
@@ -27,28 +27,21 @@ async def get_digest():
             data = item_resp.json()
 
             if data and data.get("type") == "story":
-                items.append({
-                    "id": data["id"],
-                    "title": data.get("title"),
-                    "url": data.get("url"),
-                    "by": data.get("by"),
-                    "score": data.get("score"),
-                })
-            
-            summary = summarize_item(
-                title=data.get("title"),
-                url=data.get("url")
-            ) or "Summary unavailable."
-
-
-            items.append({
+                item = {
                 "id": data["id"],
                 "title": data.get("title"),
                 "url": data.get("url"),
                 "by": data.get("by"),
                 "score": data.get("score"),
-                "summary": summary
-            })
+                }
+
+                summary = summarize_item(
+                title=data.get("title"),
+                url=data.get("url")
+            ) or "Summary unavailable."
+            
+            item["summary"] = summary
+            items.append(item)
 
         return {
             "date": "today",

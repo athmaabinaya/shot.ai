@@ -4,6 +4,8 @@ class DigestItem {
   final String? url;
   final String author;
   final int score;
+  final String summary;
+
 
   DigestItem({
     required this.id,
@@ -11,15 +13,17 @@ class DigestItem {
     required this.url,
     required this.author,
     required this.score,
+    required this.summary,
   });
 
-  factory DigestItem.fromJson(Map<String, dynamic> json) {
-    return DigestItem(
-      id: json['id'],
-      title: json['title'],
-      url: json['url'],
-      author: json['by'],
-      score: json['score'],
-    );
-  }
+ factory DigestItem.fromJson(Map<String, dynamic> json) {
+  return DigestItem(
+    id: json['id'],
+    title: json['title'] ?? 'Untitled',
+    url: json['url'],
+    author: json['by'] ?? 'unknown',  
+    score: json['score'] ?? 0,
+    summary: json['summary'] ?? 'No summary available.',
+  );
+}
 }

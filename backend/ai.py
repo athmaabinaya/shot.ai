@@ -15,14 +15,21 @@ genai.configure(api_key=api_key)
 
 # Use a currently supported Gemini model name. The plain "gemini-1.5-flash"
 # can return 404 for v1beta; the "-001" suffix is the stable variant.
-model = genai.GenerativeModel("gemini-1.5-flash-001")
+model = genai.GenerativeModel("models/gemini-2.5-flash") #gemini-1.5-flash-001
 
 def summarize_item(title: str, url: str | None):
     prompt = f"""
 You are a tech analyst.
 
-Summarize the following tech news item in 3 concise bullet points.
-Then explain why it matters for software engineers or product builders.
+Return the response in EXACTLY this format:
+
+SUMMARY:
+• <bullet 1>
+• <bullet 2>
+• <bullet 3>
+
+WHY THIS MATTERS:
+2–3 sentences explaining relevance to software engineers, product builders, or the tech industry.
 
 Title: {title}
 URL: {url}
@@ -30,6 +37,7 @@ URL: {url}
 
     try:
         response = model.generate_content(prompt)
+        print(response.text);
         return response.text
     except Exception as e:
         # Fallback so the API still works even if the Gemini model/config

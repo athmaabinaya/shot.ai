@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/digest_items.dart';
 import '../services/digest_service.dart';
+import '../screens/digest_detail_screen.dart';
 
 void main() {
   runApp(const ShotAIApp());
@@ -66,6 +67,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   'by ${item.author} • ${item.score} points',
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 14),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DigestDetailScreen(item: item)),
+                  );
+                },
               );
             },
           );
