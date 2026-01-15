@@ -15,7 +15,7 @@ genai.configure(api_key=api_key)
 
 # Use a currently supported Gemini model name. The plain "gemini-1.5-flash"
 # can return 404 for v1beta; the "-001" suffix is the stable variant.
-model = genai.GenerativeModel("models/gemini-2.5-flash") #gemini-1.5-flash-001
+model = genai.GenerativeModel("gemini-flash-latest") #gemini-1.5-flash-001
 
 def summarize_item(title: str, url: str | None):
     prompt = f"""

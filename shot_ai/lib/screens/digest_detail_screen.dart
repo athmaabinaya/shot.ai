@@ -15,10 +15,10 @@ class DigestDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
-            Text(item.title,
+            Text(item.title ?? 'Untitled',
                 style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 12),
-            Text(item.summary),
+            Text(item.summary ?? 'No summary available.'),
             const SizedBox(height: 20),
             if (item.url != null)
               TextButton(

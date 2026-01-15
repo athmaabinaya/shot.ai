@@ -62,9 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
               final item = items[index];
 
               return ListTile(
-                title: Text(item.title),
+                title: Text(item.title ?? 'Untitled'),
                 subtitle: Text(
-                  'by ${item.author} • ${item.score} points',
+                  '${item.source} • ${item.score ?? 0} points',
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 14),
                 onTap: () {
