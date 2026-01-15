@@ -17,6 +17,6 @@ inside the app.
 ## Tech Stack (initial)
 - Mobile: Flutter
 - Backend: FastAPI (Python)
-- AI: LLM-based summarization & classification
+- AI: Gemini Flash (latest) for fast, cost-efficient daily summaries
 - Data: PostgreSQL
 
