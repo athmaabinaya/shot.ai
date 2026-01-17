@@ -20,3 +20,14 @@ inside the app.
 - AI: Gemini Flash (latest) for fast, cost-efficient daily summaries
 - Data: PostgreSQL
 
+### Install
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+cd ../mobile/shot_ai
+flutter pub get
+flutter run -d windows
+
