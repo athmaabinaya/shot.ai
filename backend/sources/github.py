@@ -12,12 +12,15 @@ def fetch_github_trending(n=1):
         repo_url = "https://github.com" + repo.h2.a['href']
         description_tag = repo.p
         description = description_tag.get_text(strip=True) if description_tag else ""
+        stars_text = repo.find("a", class_="Link--muted").text
+        stars = int(stars_text.replace(",", "").replace("k", "000"))
         
         items.append({
             "title": f"{repo_name} – {description}",
             "url": repo_url,
             "source": "GitHub Trending",
             "category": "Open Source / Tools",
-            "summary": None
+            "summary": None,
+            "stars": stars
         })
     return items

@@ -4,6 +4,7 @@ class DigestItem {
   final String? source;
   final String? category;
   final String? summary;
+  final int? stars;
   final int? score;
 
   DigestItem({
@@ -12,6 +13,7 @@ class DigestItem {
     this.source,
     this.category,
     this.summary,
+    this.stars,
     this.score,
   });
 
@@ -24,6 +26,7 @@ class DigestItem {
         source: json['source'] as String?,
         category: json['category'] as String?,
         summary: json['summary'] as String?,
+        stars: json['stars'],
         score: json['score'] as int?,
       );
     } catch (e, stack) {

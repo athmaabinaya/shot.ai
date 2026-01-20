@@ -2,3 +2,6 @@ fastapi
 uvicorn
 httpx
 openai
+google-generativeai
+beautifulsoup4
+feedparser
