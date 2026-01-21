@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/digest_items.dart';
 
 class DigestService {
-  static const String baseUrl = 'http://localhost:8000';// Android emulator
+  static const String baseUrl = 'http://10.0.2.2:8000';// Android emulator
 
   static Future<List<DigestItem>> fetchDigest() async {
     final response = await http.get(Uri.parse('$baseUrl/digest'));

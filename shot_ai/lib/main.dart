@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../models/digest_items.dart';
 import '../services/digest_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const ShotAIApp());
@@ -14,9 +14,11 @@ class ShotAIApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'shot.ai',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.deepPurple,
+        scaffoldBackgroundColor: const Color(0xFFF6F7FB),
       ),
       home: const HomeScreen(),
     );
@@ -43,76 +45,96 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('shot.ai — Daily Shot'),
+        title: const Text(
+          'shot.ai',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.indigo[200],
+        elevation: 1,
       ),
       body: FutureBuilder<List<DigestItem>>(
         future: digestFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
+          }
+
+          if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           }
 
           final items = snapshot.data!;
-          if (items.isEmpty) {
-            return const Center(child: Text('No items available.'));
-          }
 
-          return ListView.builder(
+          return ListView.separated(
+            padding: const EdgeInsets.all(12),
             itemCount: items.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 20),
             itemBuilder: (context, index) {
               final item = items[index];
 
-              return Card(
-                margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Title clickable link
-                      GestureDetector(
-                        onTap: () async {
-                          if (item.url != null &&
-                              await canLaunchUrl(Uri.parse(item.url!))) {
-                            await launchUrl(Uri.parse(item.url!));
-                          }
-                        },
-                        child: Text(
-                          item.title ?? "Untitled",
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueAccent,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-
-                      // Source + Score
-                      Text(
-                        item.source == "GitHub Trending"
-                          ? '${item.source ?? "Untitled"} • ⭐ ${item.stars ?? 0} stars'
-                          :'${item.source ?? "UNKNOWN"} • Score: ${item.score ?? 0}',
-                        style:
-                            const TextStyle(fontSize: 12, color: Colors.grey),
-                      ),
-                      const SizedBox(height: 8),
-
-                      // Summary
-                      Text(
-                        item.summary ?? 'Summary temporarily unavailable',
-                        style: const TextStyle(fontSize: 14),
-                      ),
-                    ],
-                  ),
-                ),
-              );
+              return _DigestCard(item: item);
             },
           );
         },
+      ),
+    );
+  }
+}
+
+class _DigestCard extends StatelessWidget {
+  final DigestItem item;
+
+  const _DigestCard({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      elevation : 2,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          dividerColor: Colors.transparent, // remove default divider
+        ),
+        child: ExpansionTile(
+          maintainState: true,
+          tilePadding:
+          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          childrenPadding:
+          const EdgeInsets.fromLTRB(16, 0, 16, 16),
+
+          title: Text(
+            item.title ?? "Untitled",
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+
+          subtitle: Text(
+            item.source == "GitHub Trending"
+                ? "${item.source ?? "Untitled"} • ⭐ ${item.stars ?? 0} stars"
+                : "${item.source ?? "UNKNOWN"} • Score: ${item.score ?? 0}",
+            style: const TextStyle(
+              fontSize: 12,
+              color: Colors.grey,
+            ),
+          ),
+
+          children: [
+            Text(
+              item.summary ?? "No summary available",
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                fontSize: 14,
+                height: 1.45,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
