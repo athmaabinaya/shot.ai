@@ -9,7 +9,6 @@ if not api_key:
     raise ValueError(
         "GEMINI_API_KEY environment variable is not set. "
         "Please set it before running the server. "
-        "You can set it with: $env:GEMINI_API_KEY='AIzaSyAjbwvzPqOoB3Hg1mNbXMlRdtRDaNSnDpk' (PowerShell) "
         "or export GEMINI_API_KEY='your-api-key' (bash). "
         "Get your API key from: https://aistudio.google.com/app/apikey"
     )

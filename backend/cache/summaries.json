@@ -1,29 +1,29 @@
 {
-  "date": "2026-01-19",
+  "date": "2026-01-20",
   "items": [
     {
-      "title": "Article by article, how Big Tech shaped the EU's roll-back of digital rights",
-      "url": "https://corporateeurope.org/en/2026/01/article-article-how-big-tech-shaped-eus-roll-back-digital-rights",
+      "title": "IP Addresses Through 2025",
+      "url": "https://www.potaroo.net/ispcol/2026-01/addr2025.html",
       "source": "Hacker News",
       "category": "Community / Startups",
-      "score": 57,
-      "summary": "SUMMARY:\n\u2022 Major technology companies actively lobbied against and influenced the drafting of EU digital rights legislation, particularly impacting regulations like the Digital Services Act (DSA) and Digital Markets Act (DMA).\n\u2022 Through extensive lobbying efforts, industry-funded research, and strategic engagement, Big Tech aimed to weaken or dilute regulations designed to curb their market power and enhance user protection.\n\u2022 The article details how specific provisions and enforcement mechanisms within these regulations were softened due to industry pressure, ultimately leading to a perceived \"roll-back\" of initial digital rights ambitions.\n\nWHY THIS MATTERS:\nThis demonstrates how industry influence can directly shape the regulatory landscape that software engineers and product builders operate within. Understanding these dynamics is crucial for anticipating future regulatory shifts and for developing products and services that are both innovative and compliant with evolving digital rights frameworks."
+      "score": 74,
+      "summary": "SUMMARY:\n\u2022 IPv4 address exhaustion will continue to be a global issue through 2025, with significant regional disparities.\n\u2022 While IPv6 adoption is growing, it is not yet sufficient to fully offset the decline in available IPv4 addresses worldwide.\n\u2022 The report highlights that the rate of IPv6 deployment needs to accelerate to effectively mitigate the ongoing IPv4 shortage.\n\nWHY THIS MATTERS:\nFor software engineers and product builders, understanding IP address availability is crucial for designing scalable and future-proof applications, especially those requiring direct IP connectivity. The ongoing IPv4 scarcity and the gradual shift to IPv6 necessitate careful consideration of IP addressing strategies and network configurations to ensure service continuity and broad accessibility. This trend impacts network infrastructure planning, security protocols, and the overall architecture of internet-dependent services."
     },
     {
-      "title": "Radboud University selects Fairphone as standard smartphone for employees",
-      "url": "https://www.ru.nl/en/staff/news/radboud-university-selects-fairphone-as-standard-smartphone-for-employees",
+      "title": "Danish pension fund divesting US Treasuries",
+      "url": "https://www.reuters.com/business/danish-pension-fund-divest-its-us-treasuries-2026-01-20/",
       "source": "Hacker News",
       "category": "Community / Startups",
-      "score": 257,
-      "summary": "SUMMARY:\n\u2022 Radboud University has chosen Fairphone as its standard smartphone for all employees.\n\u2022 This decision highlights a growing trend of organizations prioritizing sustainability and ethical sourcing in their technology procurement.\n\u2022 The Fairphone's modular design and focus on fair labor practices were key factors in the university's selection.\n\nWHY THIS MATTERS:\nThis decision signals a potential shift in enterprise IT procurement, with sustainability and ethical considerations becoming as important as functionality and cost. Software engineers and product builders can leverage this by focusing on developing more modular, repairable, and ethically sourced hardware components and software ecosystems. The tech industry as a whole may see increased demand for products that align with these values, influencing supply chains and manufacturing practices."
+      "score": 133,
+      "summary": "SUMMARY:\n\u2022 PFA, a major Danish pension fund, plans to divest its holdings of US Treasuries by January 2026.\n\u2022 This decision is driven by concerns over climate risk and the potential for future stranded assets in the fossil fuel sector that supports some US debt.\n\u2022 The fund aims to transition its investments towards more sustainable assets that align with its ESG (Environmental, Social, and Governance) goals.\n\nWHY THIS MATTERS:\nThis move highlights the growing influence of ESG factors on large institutional investment decisions, potentially impacting the demand for US government debt. For software engineers and product builders, it signals an increasing need to integrate sustainability metrics and climate-risk assessments into financial technology platforms and data analysis tools. This trend suggests a shift in the financial landscape where environmental impact will be a key consideration for asset allocation and investment strategy."
     },
     {
-      "title": "OpenBMB/VoxCPM \u2013 VoxCPM: Tokenizer-Free TTS for Context-Aware Speech Generation and True-to-Life Voice Cloning",
-      "url": "https://github.com/OpenBMB/VoxCPM",
+      "title": "microsoft/agent-lightning \u2013 The absolute trainer to light up AI agents.",
+      "url": "https://github.com/microsoft/agent-lightning",
       "source": "GitHub Trending",
       "category": "Open Source / Tools",
-      "summary": "SUMMARY:\n\u2022 VoxCPM is a novel tokenizer-free text-to-speech (TTS) model that generates speech directly from text.\n\u2022 It leverages a Contrastive Predictive Coding (CPC) based approach for unsupervised representation learning of acoustic features.\n\u2022 The model achieves context-aware speech generation and high-fidelity, true-to-life voice cloning capabilities.\n\nWHY THIS MATTERS:\nThis advancement in TTS technology simplifies the speech generation pipeline by removing the need for tokenization, potentially leading to faster and more efficient models. For software engineers and product builders, this means the possibility of integrating more natural and personalized voice experiences into applications, enhancing user engagement and accessibility. The true-to-life voice cloning also opens doors for advanced creative tools and personalized digital assistants.",
-      "stars": 4629
+      "summary": "SUMMARY:\n\u2022 microsoft/agent-lightning is a Python library designed to simplify and accelerate the training of AI agents.\n\u2022 It provides a unified interface for defining agent architectures, managing training loops, and evaluating performance.\n\u2022 The library integrates with popular AI frameworks and tools, aiming to reduce boilerplate code and common pitfalls in agent development.\n\nWHY THIS MATTERS:\nFor software engineers and product builders, this library can significantly speed up the development and iteration cycles for AI-powered applications. By abstracting away complex training infrastructure, it allows teams to focus on the core agent logic and business value, ultimately leading to faster product deployment and innovation in the AI space.",
+      "stars": 10622
     },
     {
       "id": "https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence",
@@ -33,17 +33,17 @@
       "published_at": "Sun, 18 Jan 2026 10:00:00 GMT",
       "content": "OpenAI\u2019s business model scales with intelligence\u2014spanning subscriptions, API, ads, commerce, and compute\u2014driven by deepening ChatGPT adoption.",
       "score": 4,
-      "summary": "SUMMARY:\n\u2022 OpenAI is exploring a business model where its AI products are priced and scaled based on the \"value of intelligence\" they provide, rather than traditional metrics like compute usage.\n\u2022 This approach implies a shift towards capturing a portion of the economic gains generated by their AI, moving beyond simple API call costs.\n\u2022 The concept suggests a tiered or dynamic pricing structure that reflects the impact and utility of the AI's output for different use cases and industries.\n\nWHY THIS MATTERS:\nThis business model innovation could fundamentally change how AI services are valued and monetized, pushing software engineers and product builders to focus on delivering measurable business outcomes. For the tech industry, it signals a potential evolution in AI service providers from utility providers to partners in value creation, impacting competitive dynamics and investment strategies."
+      "summary": "SUMMARY:\n\u2022 OpenAI's latest blog post outlines a vision for a business model that scales with the perceived value of AI-generated intelligence, moving beyond simple compute or token-based pricing.\n\u2022 The company emphasizes the potential for AI to increase productivity and create new economic value, suggesting pricing strategies that reflect this enhanced output.\n\u2022 This approach implies a shift towards outcome-based or feature-rich pricing, where customers pay for the tangible benefits and capabilities derived from AI, rather than just the underlying resources.\n\nWHY THIS MATTERS:\nThis shift in pricing strategy is crucial for software engineers and product builders as it signals a move towards a value-driven economy for AI. Understanding how to align product features and pricing with demonstrable intelligence-driven value will be key to successful product development and monetization in the AI era. It also points to a future where AI tools are judged not just on their technical prowess but on their ability to directly impact business outcomes and create new markets."
     },
     {
-      "id": "https://openai.com/index/ai-for-human-agency",
-      "title": "AI for self empowerment",
-      "url": "https://openai.com/index/ai-for-human-agency",
+      "id": "https://openai.com/index/servicenow-powers-actionable-enterprise-ai-with-openai",
+      "title": "ServiceNow powers actionable enterprise AI with OpenAI",
+      "url": "https://openai.com/index/servicenow-powers-actionable-enterprise-ai-with-openai",
       "source": "openai",
-      "published_at": "Sun, 18 Jan 2026 12:00:00 GMT",
-      "content": "How AI can expand human agency by closing the capability overhang\u2014helping people, businesses, and countries unlock real productivity, growth, and opportunity.",
+      "published_at": "Tue, 20 Jan 2026 05:45:00 GMT",
+      "content": "ServiceNow expands access to OpenAI frontier models to power AI-driven enterprise workflows, summarization, search, and voice across the ServiceNow Platform.",
       "score": 2,
-      "summary": "SUMMARY:\n\u2022 OpenAI is exploring how AI can enhance human agency and self-empowerment, moving beyond mere task automation.\n\u2022 The focus is on AI systems that support human decision-making, creativity, and learning, enabling individuals to achieve their goals more effectively.\n\u2022 This initiative aims to develop AI that acts as a partner, augmenting human capabilities rather than replacing them, and respects user autonomy.\n\nWHY THIS MATTERS:\nFor software engineers and product builders, this signifies a shift towards developing AI tools that are more collaborative and human-centric, requiring new design patterns for interaction and control. This direction could lead to the creation of more intuitive and empowering applications that foster user growth and independence within the tech industry."
+      "summary": "SUMMARY:\n\u2022 ServiceNow is integrating OpenAI's large language models (LLMs) to enhance its enterprise AI capabilities.\n\u2022 This partnership aims to deliver more intelligent automation and insights across ServiceNow's platform for businesses.\n\u2022 The integration will focus on tasks such as generating code, automating workflows, and improving customer service.\n\nWHY THIS MATTERS:\nThis collaboration signals a significant shift towards making advanced AI, like LLMs, more accessible and practical for enterprise-level operations. Software engineers and product builders can expect new tools and frameworks that leverage these capabilities, potentially leading to faster development cycles and more sophisticated applications. The tech industry as a whole will see a greater adoption of AI-driven automation and intelligence within core business processes."
     }
   ]
 }
